@@ -6,7 +6,7 @@ import java.util.Optional;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
-import br.net.level.cadastroPedidos.entities.Order;
+import br.net.level.cadastroPedidos.entities.Orders;
 import br.net.level.cadastroPedidos.repositories.OrderRepository;
 
 @Service
@@ -15,12 +15,12 @@ public class OrderService {
 	@Autowired
 	private OrderRepository repository;
 	
-	public List<Order> findAll() {
+	public List<Orders> findAll() {
 		return repository.findAll();
 	}
 
-	public Order findById(Long id) {
-		Optional<Order> obj = repository.findById(id);
+	public Orders findById(Long id) {
+		Optional<Orders> obj = repository.findById(id);
 		return obj.get();
 		
 	}
